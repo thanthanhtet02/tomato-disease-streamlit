@@ -15,35 +15,26 @@ st.set_page_config(page_title="Tomato Disease Classifier", layout="wide")
 st.markdown("""
     <style>
     /* Green background for main content area */
-    .main {
-        background-color: #E8F5E9;
+    .main .block-container {
+        background-color: #E8F5E9 !important;
     }
     
     /* Green background for file uploader */
     [data-testid="stFileUploader"] {
-        background-color: #C8E6C9;
+        background-color: #C8E6C9 !important;
         padding: 20px;
         border-radius: 10px;
         border: 2px dashed #81C784;
     }
     
-    /* Green background for image containers */
-    [data-testid="stImage"] {
-        background-color: #F1F8E9;
-        padding: 10px;
-        border-radius: 8px;
+    /* Green background for file uploader section */
+    section[data-testid="stFileUploadDropzone"] {
+        background-color: #C8E6C9 !important;
     }
     
     /* Success/info boxes green theme */
     .stSuccess {
-        background-color: #C8E6C9;
-    }
-    
-    /* Column backgrounds */
-    [data-testid="column"] {
-        background-color: #F1F8E9;
-        padding: 15px;
-        border-radius: 8px;
+        background-color: #C8E6C9 !important;
     }
     </style>
 """, unsafe_allow_html=True)
@@ -57,11 +48,6 @@ with st.sidebar:
     # Show logo if available
     if os.path.exists("assets/icons8-plant-94.png"):
         st.image("assets/icons8-plant-94.png", width=150)
-    
-    st.header("About the Model")
-    st.write("This app uses an ensemble of two models:")
-    st.write("- MobileNetV2")
-    st.write("- EfficientNetB0")
     
     st.header("How to Use")
     st.write("1. Upload a tomato leaf image")
