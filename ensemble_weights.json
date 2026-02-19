@@ -1,0 +1,5 @@
+{
+  "MobileNetV2": 0.4,
+  "ResNet50": 0.3,
+  "EfficientNetB0": 0.3
+}
