@@ -14,8 +14,13 @@ st.set_page_config(page_title="Tomato Disease Classifier", layout="wide")
 # Add custom CSS for green theme
 st.markdown("""
     <style>
-    /* Green background for main content area */
-    .main .block-container {
+    /* Green background for entire app */
+    .stApp {
+        background-color: #E8F5E9 !important;
+    }
+    
+    /* Green background for main content */
+    .main {
         background-color: #E8F5E9 !important;
     }
     
@@ -24,16 +29,11 @@ st.markdown("""
         background-color: #C8E6C9 !important;
         padding: 20px;
         border-radius: 10px;
-        border: 2px dashed #81C784;
+        border: 2px dashed #81C784 !important;
     }
     
-    /* Green background for file uploader section */
-    section[data-testid="stFileUploadDropzone"] {
-        background-color: #C8E6C9 !important;
-    }
-    
-    /* Success/info boxes green theme */
-    .stSuccess {
+    /* Green background for upload drop zone */
+    [data-testid="stFileUploadDropzone"] {
         background-color: #C8E6C9 !important;
     }
     </style>
@@ -55,10 +55,10 @@ with st.sidebar:
     st.write("3. View the results")
     
     # Show example image if available
-    if os.path.exists("assets/happy leave.png"):
+    if os.path.exists("assets/happy leave.JPG"):
         st.write("---")
         st.write("Example:")
-        st.image("assets/happy leave.png", caption="Sample leaf")
+        st.image("assets/happy leave.JPG", caption="Sample leaf", width=150)
 
 # Load class names from JSON file
 @st.cache_resource
